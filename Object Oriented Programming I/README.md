@@ -1,15 +1,5 @@
-This repository contains some of the projects that I have developed, alone or in collaboration with fellow students, in a series of academic courses as an undergraduate student at the [Computer Engineering & Informatics Department](https://www.ceid.upatras.gr/). The majority of comments, references and descriptions are in English. Although the final reports of the projects as well as the actual assignment given by the professors are in Greek.
+#### Object Oriented Programming I
 
-Note that the names of the folders are the names of the courses that the projects were included in.
-Also the technologies that were used for each project are:
+This repository contains two assignments of the course Object Oriented Programming I. Through these series of exercises we were at first familiarized with the basic features of Java and then experiment on them via specific tasks.
 
-| Course name | Technology Used |
-| ----------- | --------------- |
-| Digital Communications | *MATLAB* |
-| Internet Technologies | *HTML, CSS, etc.* |
-| Languages Technology | *Python* |
-| Object Oriented Programming I | *Java* |
-| Object Oriented Programming II | *C++* |
-| Operating Systems I | *C* |
-| Principles of Programming Languages & Compilers | *Flex, Bison* |
-| Scientific Computing | *MATLAB* |
+Each assignment itself consists of a set of exercises(Set1 and Set3 that are included in the folders above) along with some of the lab exercises.
