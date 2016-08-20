@@ -1,15 +1,7 @@
-This repository contains some of the projects that I have developed, alone or in collaboration with fellow students, in a series of academic courses as an undergraduate student at the [Computer Engineering & Informatics Department](https://www.ceid.upatras.gr/). The majority of comments, references and descriptions are in English. Although the final reports of the projects as well as the actual assignment given by the professors are in Greek.
+#### Digital Communications
 
-Note that the names of the folders are the names of the courses that the projects were included in.
-Also the technologies that were used for each project are:
+This repository contains the two assignments of the course Digital Communications.
 
-| Course name | Technology Used |
-| ----------- | --------------- |
-| Digital Communications | *MATLAB* |
-| Internet Technologies | *HTML, CSS, etc.* |
-| Languages Technology | *Python* |
-| Object Oriented Programming I | *Java* |
-| Object Oriented Programming II | *C++* |
-| Operating Systems I | *C* |
-| Principles of Programming Languages & Compilers | *Flex, Bison* |
-| Scientific Computing | *MATLAB* |
+**In the first assignment we had to implement both a uniform and  a non-uniform (based on Lloyd-Max algorithm) PCM quantizer, and to compare the results of several different levels of quantization of `speech.wav`. Also, using Huffman coding (its source code, `huffman.m` was provided with the assignment) and having `keimeno.txt` as input, we had to calculate the probability of each symbol of the alphabet, the entropy of the source, and Huffman's efficiency.
+
+**In this assignment we had to implement a simulation of a basic telecommunication system (transmitter-channel-receiver), including filters, noise, upsampling and decision modules. We used 2-PAM, 4-PAM, and 4-QAM modulation, calculated BER and then compared the different results.
