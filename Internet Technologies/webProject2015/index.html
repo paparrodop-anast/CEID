@@ -1,0 +1,318 @@
+<?php 
+    if (isset( $_SESSION['username'] ) ) {
+        header("location: panel.html");
+    } else {
+        session_start();
+    }
+?>
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Web Project 2015</title>
+
+    <link rel="icon" type="image/png" href="img/favicon.png">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="css/animate.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/creative.css" type="text/css">
+
+</head>
+
+<body id="page-top">
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="#start">Αρχικη</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#search">Αναζητηση</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#events">Εκδηλωσεις</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Επικοινωνια</a>
+                    </li>
+                    <li>
+                        <a href="feed/">RSS</a>
+                    </li>
+                    <!-- login form for bigger resolution-->
+                    <li class="dropdown hidden-xs">
+                        <a  class="dropdown-toggle" data-toggle="dropdown">Εισοδος <b class="caret"></b></a>
+                        <ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
+                            <li class="collapse navbar-collapse">
+                               <div class="row" >
+                                  <div class="col-md-12 col-xs-12">
+                                     <form class="form" id="login_form" method="post" name="form_login" action="login.php">
+                                        <div class="form-group">
+                                           <label class="sr-only" for="username">Όνομα χρήστη</label>
+                                           <input type="text" name="username" id="username" placeholder="Όνομα χρήστη" required>
+                                        </div>
+                                        <div class="form-group">
+                                           <label class="sr-only" for="password">Κωδικός πρόσβασης</label>
+                                           <input type="password" name="password" id="password" placeholder="Κωδικός πρόσβασης" required>
+                                        </div>
+                                        <div class="form-group">
+                                           <input class="btn btn-success btn-block" id="Submit" name="Submit" type="Submit" value="Συνδεση"/>
+                                        </div>
+                                     </form>
+                                  </div>
+                               </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- login form for smaller resolution-->
+                    <li class="dropdown hidden-lg hidden-md hidden-sm">
+                        <div class="row" >
+                            <div class="col-md-12">
+                                <form class="form" id="login_form" method="post" name="form_login" action="login.php">
+                                    <div class="form-group">
+                                       <label class="sr-only" for="username">Όνομα χρήστη</label>
+                                       <input type="text" name="username" id="username" placeholder="Όνομα χρήστη" required>
+                                    </div>
+                                    <div class="form-group">
+                                       <label class="sr-only" for="password">Κωδικός πρόσβασης</label>
+                                       <input type="password" name="password" id="password" placeholder="Κωδικός πρόσβασης" required>
+                                    </div>
+                                    <div class="form-group">
+                                       <input class="btn btn-success" id="Submit" name="Submit" type="Submit" value="Συνδεση"/>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <header id="start">
+        <div class="header-content">
+            <div class="header-content-inner">
+                <h1>ΟΙ ΚΑΛΥΤΕΡΕΣ ΕΚΔΗΛΩΣΕΙΣ ΣΤΗΝ ΠΑΤΡΑ</h1>
+                <hr>
+                <p>Ανακαλύψτε όλες τις εκδηλώσεις που πρόκειται να πραγματοποιηθούν στην Πάτρα!</p>
+                <a href="#search" class="btn btn-primary btn-xl page-scroll">ΠΕΡΙΣΣΟΤΕΡΑ</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="bg-primary" id="search">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">Αναζήτηση</h2>
+                    <hr class="light">
+                    <p class="text-faded">Από εδώ μπορείτε να αναζητήσετε όλες τις εκδηλώσεις που γίνονται στην Πάτρα.</p>
+                    <div class="text-center">
+                        <form class="navbar-form" id="search_form" method="POST" role="search" action="search.php">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Αναζήτηση" id="searchQuery" name="searchQuery">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default" id="searchBtn" type="submit" data-target="#searchModal"><i class="glyphicon glyphicon-search"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="tempRes" id="tempRes" name="tempRes"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="events" style="background-color:#EEEEEE;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Εκδηλώσεις</h2>
+                    <hr class="primary">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg col-md col-sm text-center" id="fbEv">
+                    
+                </div>
+            </div> 
+        </div>
+    </section>
+
+    <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true"> </div>
+
+    <section id="contact" style="background:#A1A8A3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">Επικοινωνία</h2>
+                    <hr class="primary">
+                    <p>Για οποιοδήποτε πρόβλημα, απορία ή διευκρίνηση μπορείτε να στείλετε στα...</p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+                    <p><a href="mailto:yfantis@ceid.upatras.gr">yfantis@ceid.upatras.gr</a></p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+                    <p><a href="mailto:paparrodop@ceid.upatras.gr">paparrodop@ceid.upatras.gr</a></p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+                    <p><a href="mailto:maras@ceid.upatras.gr">maras@ceid.upatras.gr</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.fittext.js"></script>
+    <script src="js/wow.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/creative.js"></script>
+
+    <!-- GET facebook events -->
+    <script type="text/javascript">
+        $("document").ready(function() {
+            console.log("ready!");
+
+            var url="showEvents.php";
+
+            $.getJSON(url,function(json){            // loop through the data here
+                $.each(json.members,function(i,dat){
+                    console.log(">> reading item...");
+                    $('#fbEv').append( 
+                        '<div class="panel panel-default"> ' +
+                           '<div class="panel-body" id="fbEv' + i + '"> ' +
+                                '<h3 id="eventName">' +
+                                     dat.name +
+                                '</h3><br>' +
+                                '<b>Πού: </b>' + dat.street + '<br>' +
+                                '<b>Πότε: </b>' + dat.dateNtime + '<br>' +
+                                '<b>Διοργανωτής: </b>' + dat.owner_name + '<br>' +
+                                '<img src="' + dat.cover_photo_url + '" alt="event photo"  style="float:left; width:70px; height:80px;"' + '<br>' +
+                                '<button class="btn btn-primary pull-right" id="detBtn" name="detBtn" data-toggle="modal" data-target="#detailsModal' + i + '"> ΛΕΠΤΟΜΕΡΕΙΕΣ </button>' +
+                            '</div>' +
+                        '</div>' +
+                        '<div class="modal fade" id="detailsModal' + i + '" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel" aria-hidden="true"> ' +
+                            '<div class="modal-dialog">' +
+                                '<div class="modal-content" id="detailsModalData">' +
+                                    '<div class="modal-header" id="modalTitle" style="background-color:#EEEEEE;">' +
+                                        '<h4 class="modal-title" id="detailsModalLabel"> ' +
+                                            dat.name +
+                                        '</h4>' +
+                                        '<h5>' +
+                                            '(' + dat.lat + ', ' + dat.lng + ')' +
+                                        '</h5>' +
+                                    '</div>' +
+                                    '<div class="modal-body" id="detailsModalBody"> '+  
+                                        '<div class="modal-body" id="detailsModalBody">' +
+                                               dat.description +
+                                        '</div>' +  
+                                    '</div>'+
+                                    '<div class="modal-footer" style="background-color:#EEEEEE;">'+
+                                        '<button type="button" class="btn btn-default" data-dismiss="modal">Κλεισιμο</button>' +
+                                    '</div>' +
+                                '</div>' +
+                            '</div>' +   
+                        '</div>'
+                    );
+                });   
+            });   
+
+       /*search button*/    
+       $("#searchBtn").click(function(){
+            var data = $('input#searchQuery').val();
+            console.log(data);
+            //data = data.serialize();
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                url: "search.php", //Relative or absolute path to login.php file
+                data: {"search" : data},
+                success: function(data) { 
+                    if(data.search != null){
+                        $('#searchModal').empty();
+                        $.each(data.search,function(j,src){
+                            //console.log("Success" + src['name']);
+                            //$("#tempRes").append('<div>' + src.name + '</div>');
+                            $('#searchModal').modal('show');
+                            $('#searchModal').append(
+                                '<div class="modal-dialog">' +
+                                    ' <div class="modal-content" id="searchModalData">' +
+                                        ' <div class="modal-header" id="searchmodalTitle" style="background-color:#EEEEEE;">' +
+                                           ' <h4 class="modal-title" id="searchModalLabel"> ' +
+                                                src.name +
+                                            '</h4>' +
+                                        '</div>' +
+                                        '<div class="modal-body" id="searchModalBody"> '+ 
+                                            '<div class="modal-body" id="searchModalBody">' +
+                                                src.description +
+                                            '</div>' +
+                                        '</div>'+
+                                        '<div class="modal-footer" style="background-color:#EEEEEE;">'+
+                                            '<button type="button" class="btn btn-default" data-dismiss="modal">Κλεισιμο</button>' +
+                                        '</div>' +
+                                    '</div>' +
+                                '</div>' 
+                            );
+                        }); 
+                    } else {
+                        $("#tempRes").empty();
+                        $("#tempRes").append('<div> Δεν βρέθηκαν αποτελέσματα </div>');
+                    }
+                }
+            });
+            return false;
+        });
+
+            console.log("finish!");
+        }); 
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,367 @@
+<?php 
+    if (!isset( $_SESSION['username'] ) ) {
+        header("location: index.html");
+    } else {
+        session_start();
+    }
+?>
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Web Project 2015</title>
+
+    <link rel="icon" type="image/png" href="img/favicon.png">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="css/animate.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/creative.css" type="text/css">
+
+</head>
+
+<body id="page-top">
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="#admin">Διαχειριστης</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#events">Εκδηλωσεις</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Επικοινωνια</a>
+                    </li>
+                    <li>
+                        <a href="logout.php">Εξοδος</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <section class="bg-primary" id="admin">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">Διαχειριστής</h2>
+                    <hr class="light">
+                    <p class="text-faded">Ως διαχειριστής, μπορείς να αναζητήσεις όλες τις εκδηλώσεις που γίνονται στην Πάτρα. Επιπλέον, μπορείς να προσθέσεις τις δικές σου, προσθέτοντας απλά το όνομα της σελίδας, ή να διαγράψεις κάποια απο τις υπάρχουσες.</p>
+                    <div class="col-lg-offset2 col-md-offset2">
+                        <div class="input-group">
+                            <input id="queryPanelInput" type="text" class="form-control" aria-label="...">
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Λειτουργια <span class="caret"></span></button>
+                                <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                                    <li><a href="#" id="searchQueryPanel">Αναζήτηση</a></li>
+                                    <li><a href="#" id="addQueryPanel">Προσθήκη</a></li>
+                                    <li><a href="#" id="deleteQueryPanel">Διαγραφή</a></li>
+                                </ul>
+                            </div><!-- /btn-group -->
+                        </div><!-- /input-group -->
+                    </div><!-- /.col-lg-6 -->  
+
+                    <div class="tempResPanelPanel" id="tempResPanel" name="tempResPanel"></div> 
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="events" style="background-color:#EEEEEE;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg col-md col-sm text-center" id="fbEv">
+                    <h2 class="section-heading">Εκδηλώσεις</h2>
+                    <hr class="primary">    
+                </div>
+            </div> 
+        </div>
+    </section>
+
+    <div class="modal fade" id="searchModalPanel" tabindex="-1" role="dialog" aria-labelledby="searchModalPanelLabel" aria-hidden="true"></div>
+   
+    <section id="contact" style="background:#A1A8A3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">Επικοινωνία</h2>
+                    <hr class="primary">
+                    <p>Για οποιοδήποτε πρόβλημα, απορία ή διευκρίνηση μπορείτε να στείλετε στα...</p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+                    <p><a href="mailto:yfantis@ceid.upatras.gr">yfantis@ceid.upatras.gr</a></p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+                    <p><a href="mailto:paparrodop@ceid.upatras.gr">paparrodop@ceid.upatras.gr</a></p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+                    <p><a href="mailto:maras@ceid.upatras.gr">maras@ceid.upatras.gr</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.fittext.js"></script>
+    <script src="js/wow.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/creative.js"></script>
+
+    <!-- GET facebook events -->
+    <script type="text/javascript">
+        $("document").ready(function() {
+            console.log("ready!");
+
+            var myApp;
+            myApp = myApp || (function () {
+                var pleaseWaitDiv = $(
+                    '<div class="modal fade" id="pleaseWaitDialog" data-backdrop="static" data-keyboard="false">'+
+                        '<div class="modal-dialog">' +
+                            '<div class="modal-content">' +
+                                '<div class="modal-header" style="background-color:#EEEEEE;">'+
+                                    '<h1>Επεξεργασία...</h1>'+
+                                '</div>'+
+                                '<div class="modal-body">'+
+                                    '<div class="progress">'+
+                                        '<div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"">'+
+                                        '</div>'+
+                                    '</div>'+   
+                                '</div>'+
+                            '</div>'+    
+                        '</div>'+    
+                    '</div>');
+                return {
+                    showPleaseWait: function() {
+                        pleaseWaitDiv.modal();
+                    },
+                    hidePleaseWait: function () {
+                        pleaseWaitDiv.modal('hide');
+                    },
+
+                };
+            })();
+
+            var url="showEvents.php";
+
+            $.getJSON(url,function(json){            // loop through the data here
+                $.each(json.members,function(i,dat){
+                    $('#fbEv').append( 
+                        '<div class="panel panel-default""> ' +
+                            '<div class="panel-body" id="fbEv' + i + '"> ' +
+                                '<h3 id="eventName">' +
+                                     dat.name +
+                                '</h3><br>' +
+                                '<b>Πού: </b>' + dat.street + '<br>' +
+                                '<b>Πότε: </b>' + dat.dateNtime + '<br>' +
+                                '<b>Διοργανωτής: </b>' + dat.owner_name + '<br>' +
+                                '<img src="' + dat.cover_photo_url + '" alt="event photo"  style="float:left; width:70px; height:80px;"' + '<br>' +
+                                '<button class="btn btn-primary pull-right" id="detBtn" name="detBtn" data-toggle="modal" data-target="#detailsModal' + i + '"> ΛΕΠΤΟΜΕΡΕΙΕΣ </button>' +
+                            '</div>' +
+                        '</div>' +
+                        '<div class="modal fade" id="detailsModal' + i + '" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel" aria-hidden="true"> ' +
+                            '<div class="modal-dialog">' +
+                                '<div class="modal-content" id="detailsModalData">' +
+                                    '<div class="modal-header" id="modalTitle" style="background-color:#EEEEEE;">' +
+                                        '<h4 class="modal-title" id="detailsModalLabel"> ' +
+                                             dat.name +
+                                        '</h4>' +
+                                        '<h5>' +
+                                            '(' + dat.lat + ', ' + dat.lng + ')' +
+                                        '</h5>' +
+                                    '</div>' +
+                                    '<div class="modal-body" id="detailsModalBody"> '+  
+                                        '<div class="modal-body" id="detailsModalBody">' +
+                                               dat.description +
+                                        '</div>' +  
+                                    '</div>'+
+                                    '<div class="modal-footer" style="background-color:#EEEEEE;">'+
+                                        '<button type="button" class="btn btn-default" data-dismiss="modal">Κλεισιμο</button>' +
+                                    '</div>' +
+                                '</div>' +
+                            '</div>' +   
+                        '</div>'
+                    );
+                });   
+            }); 
+
+
+            /*search button impl*/    
+            $("#searchQueryPanel").click(function(){
+                var data = $('input#queryPanelInput').val();
+                console.log(data);
+                //data = data.serialize();
+                 $.ajax({
+                    type: "POST",
+                    dataType: "json",
+                    url: "search.php", //Relative or absolute path to search.php file
+                    data: {"search" : data},
+                    success: function(data) { 
+                        if(data.search != null){
+                            $("#tempResPanel").empty();
+                            $('#searchModalPanel').empty();
+                            $.each(data.search,function(j,src){
+                                //console.log("Success" + src['name']);
+                                //$("#tempResPanel").append('<div>' + src.name + '</div>');
+                                $('#searchModalPanel').modal('show');
+                                $('#searchModalPanel').append(
+                                    '<div class="modal-dialog">' +
+                                        ' <div class="modal-content" id="searchModalPanelData">' +
+                                            ' <div class="modal-header" id="searchmodalPanelTitle" style="background-color:#EEEEEE;">' +
+                                               ' <h4 class="modal-title" id="searchModalPanelLabel"> ' +
+                                                    src.name +
+                                                '</h4>' +
+                                            '</div>' +
+                                            '<div class="modal-body" id="searchModalPanelBody"> '+ 
+                                                '<div class="modal-body" id="searchModalPanelBody">' +
+                                                    src.description +
+                                                '</div>' +
+                                            '</div>'+
+                                            '<div class="modal-footer" style="background-color:#EEEEEE;">'+
+                                                '<button type="button" class="btn btn-default" data-dismiss="modal">Κλεισιμο</button>' +
+                                            '</div>' +
+                                        '</div>' +
+                                    '</div>' 
+                                );
+                            }); 
+                        } else {
+                            $("#tempResPanel").empty();
+                            $("#tempResPanel").append('<div> Δεν βρέθηκαν αποτελέσματα </div>');
+                        }
+                    }
+                });
+
+                return false;
+            });
+
+
+            /*add button impl*/
+            $("#addQueryPanel").click(function(){
+                $("#tempResPanel").empty();
+                var data = $('input#queryPanelInput').val();
+                console.log(data);
+                myApp.showPleaseWait();
+                //$('#events').delay(500000);
+                //myApp.hidePleaseWait();
+                //data = data.serialize();
+                $.ajax({
+                    type: "POST",
+                    dataType: "json",
+                    url: "addition.php", //Relative or absolute path to addition.php file
+                    data: {"addData" : data},
+                    success: function(data) { 
+                        console.log(data.addData);
+                        if(data.addData == 0){ 
+                            myApp.hidePleaseWait();
+                            $("#tempResPanel").empty();
+                            $("#tempResPanel").append('<div> Προσθήκη επιτυχής </div>');
+                            $("#events").delay(10000);
+                            location.reload(true);
+                        } else if(data.addData == 1) {
+                            myApp.hidePleaseWait();
+                            $("#tempResPanel").empty();
+                            $("#tempResPanel").append('<div> Τα events της συγκεκριμένης σελίδας υπάρχουν ήδη </div>');
+                        } else if(data.addData == 2) {
+                            myApp.hidePleaseWait();
+                            $("#tempResPanel").empty();
+                            $("#tempResPanel").append('<div> Δεν υπάρχουν events στη συγκεκριμένη σελίδα </div>');
+                        } else if(data.addData == 3) {
+                            myApp.hidePleaseWait();
+                            $("#tempResPanel").empty();
+                            $("#tempResPanel").append('<div> Προσθήκη απέτυχε. Η ζητούμενη σελίδα δε βρέθηκε </div>');
+                        }
+                    }
+                });
+            
+                return false;
+            }); 
+
+
+            /*delete button impl*/
+            $("#deleteQueryPanel").click(function(){
+                $("#tempResPanel").empty();
+                var data = $('input#queryPanelInput').val();
+                //console.log(data);
+                //data = data.serialize();
+                $.ajax({
+                    type: "POST",
+                    dataType: "json",
+                    url: "delete.php", //Relative or absolute path to delete.php file
+                    data: {"deleteData" : data},
+                    success: function(data) { 
+                        //console.log(data.deleteData);
+                        //$('#events').load('panel.html #events').fadeIn();
+                        //$('#events').load("showEvents.php").fadeIn();
+                        //console.log(data.deleteData);
+                        if(data.deleteData == 0){ 
+                            //console.log("test:" + data.deleteData);
+                            //location.reload(true);
+                            $("#tempResPanel").empty();
+                            $("#tempResPanel").append('<div> Διαγραφή επιτυχής </div>');
+
+                            //$('#events').load('panel.html #events').fadeIn(); */
+                            $("#events").delay(10000); 
+                            location.reload(true);
+
+                        } else if(data.deleteData != 0) {
+                            $("#tempResPanel").empty();
+                            $("#tempResPanel").append('<div> Διαγραφή απέτυχε. Η ζητούμενη σελίδα δε βρέθηκε </div>');
+                        }
+                    }
+                });
+                //location.reload(true);
+               
+                return false;
+            });    
+
+            console.log("finish!");
+        }); 
+    </script>
+     
+</body>
+
+</html>

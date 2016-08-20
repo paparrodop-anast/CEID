@@ -1,0 +1,161 @@
+>> test_mv_iii
+Computing Matrix Vector Multiplication c = A*b
+ Number of Matrix rows m = 16
+ Number of Matrix columns n = 16
+ Number of floating point operations = 512
+
+ Method		Cpu Seconds		MegaFlops
+ --------	--------------	--------------
+ IJ			3.896315e-04	13
+ JI			3.805044e-04	13
+ Ac			1.527882e-05	335
+Computing Matrix Vector Multiplication c = A*b
+ Number of Matrix rows m = 16
+ Number of Matrix columns n = 64
+ Number of floating point operations = 2048
+
+ Method		Cpu Seconds		MegaFlops
+ --------	--------------	--------------
+ IJ			8.529362e-04	24
+ JI			9.517660e-04	22
+ Ac			1.956710e-05	1047
+Computing Matrix Vector Multiplication c = A*b
+ Number of Matrix rows m = 16
+ Number of Matrix columns n = 256
+ Number of floating point operations = 8192
+
+ Method		Cpu Seconds		MegaFlops
+ --------	--------------	--------------
+ IJ			2.767067e-03	30
+ JI			3.227417e-03	25
+ Ac			4.898499e-05	1672
+Computing Matrix Vector Multiplication c = A*b
+ Number of Matrix rows m = 16
+ Number of Matrix columns n = 1024
+ Number of floating point operations = 32768
+
+ Method		Cpu Seconds		MegaFlops
+ --------	--------------	--------------
+ IJ			1.043258e-02	31
+ JI			6.206428e-03	53
+ Ac			2.088345e-05	15691
+Computing Matrix Vector Multiplication c = A*b
+ Number of Matrix rows m = 64
+ Number of Matrix columns n = 16
+ Number of floating point operations = 2048
+
+ Method		Cpu Seconds		MegaFlops
+ --------	--------------	--------------
+ IJ			5.174370e-04	40
+ JI			4.675943e-04	44
+ Ac			9.256209e-06	2213
+Computing Matrix Vector Multiplication c = A*b
+ Number of Matrix rows m = 64
+ Number of Matrix columns n = 64
+ Number of floating point operations = 8192
+
+ Method		Cpu Seconds		MegaFlops
+ --------	--------------	--------------
+ IJ			1.053163e-03	78
+ JI			1.041611e-03	79
+ Ac			1.422963e-05	5757
+Computing Matrix Vector Multiplication c = A*b
+ Number of Matrix rows m = 64
+ Number of Matrix columns n = 256
+ Number of floating point operations = 32768
+
+ Method		Cpu Seconds		MegaFlops
+ --------	--------------	--------------
+ IJ			3.173938e-03	103
+ JI			3.320685e-03	99
+ Ac			1.951725e-05	16789
+Computing Matrix Vector Multiplication c = A*b
+ Number of Matrix rows m = 64
+ Number of Matrix columns n = 1024
+ Number of floating point operations = 131072
+
+ Method		Cpu Seconds		MegaFlops
+ --------	--------------	--------------
+ IJ			1.178282e-02	111
+ JI			1.244768e-02	105
+ Ac			4.122624e-05	31793
+Computing Matrix Vector Multiplication c = A*b
+ Number of Matrix rows m = 256
+ Number of Matrix columns n = 16
+ Number of floating point operations = 8192
+
+ Method		Cpu Seconds		MegaFlops
+ --------	--------------	--------------
+ IJ			1.866904e-03	44
+ JI			1.602074e-03	51
+ Ac			1.219899e-05	6715
+Computing Matrix Vector Multiplication c = A*b
+ Number of Matrix rows m = 256
+ Number of Matrix columns n = 64
+ Number of floating point operations = 32768
+
+ Method		Cpu Seconds		MegaFlops
+ --------	--------------	--------------
+ IJ			3.612040e-03	91
+ JI			2.248960e-03	146
+ Ac			1.268914e-05	25824
+Computing Matrix Vector Multiplication c = A*b
+ Number of Matrix rows m = 256
+ Number of Matrix columns n = 256
+ Number of floating point operations = 131072
+
+ Method		Cpu Seconds		MegaFlops
+ --------	--------------	--------------
+ IJ			7.230236e-03	181
+ JI			6.893958e-03	190
+ Ac			2.531820e-05	51770
+Computing Matrix Vector Multiplication c = A*b
+ Number of Matrix rows m = 256
+ Number of Matrix columns n = 1024
+ Number of floating point operations = 524288
+
+ Method		Cpu Seconds		MegaFlops
+ --------	--------------	--------------
+ IJ			2.734573e-02	192
+ JI			2.428928e-02	216
+ Ac			7.905652e-05	66318
+Computing Matrix Vector Multiplication c = A*b
+ Number of Matrix rows m = 1024
+ Number of Matrix columns n = 16
+ Number of floating point operations = 32768
+
+ Method		Cpu Seconds		MegaFlops
+ --------	--------------	--------------
+ IJ			4.863456e-03	67
+ JI			3.956875e-03	83
+ Ac			1.470408e-05	22285
+Computing Matrix Vector Multiplication c = A*b
+ Number of Matrix rows m = 1024
+ Number of Matrix columns n = 64
+ Number of floating point operations = 131072
+
+ Method		Cpu Seconds		MegaFlops
+ --------	--------------	--------------
+ IJ			9.297531e-03	141
+ JI			7.815941e-03	168
+ Ac			2.693683e-05	48659
+Computing Matrix Vector Multiplication c = A*b
+ Number of Matrix rows m = 1024
+ Number of Matrix columns n = 256
+ Number of floating point operations = 524288
+
+ Method		Cpu Seconds		MegaFlops
+ --------	--------------	--------------
+ IJ			2.889705e-02	181
+ JI			3.744347e-02	140
+ Ac			1.146899e-04	45714
+Computing Matrix Vector Multiplication c = A*b
+ Number of Matrix rows m = 1024
+ Number of Matrix columns n = 1024
+ Number of floating point operations = 2097152
+
+ Method		Cpu Seconds		MegaFlops
+ --------	--------------	--------------
+ IJ			1.882885e-01	111
+ JI			1.389814e-01	151
+ Ac			1.765935e-03	11876
