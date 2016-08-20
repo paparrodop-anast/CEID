@@ -1,15 +1,12 @@
-This repository contains some of the projects that I have developed, alone or in collaboration with fellow students, in a series of academic courses as an undergraduate student at the [Computer Engineering & Informatics Department](https://www.ceid.upatras.gr/). The majority of comments, references and descriptions are in English. Although the final reports of the projects as well as the actual assignment given by the professors are in Greek.
+#### Principles of Programming Languages & Compilers
 
-Note that the names of the folders are the names of the courses that the projects were included in.
-Also the technologies that were used for each project are:
+This repository contains the project of the course Principles of Programming Languages & Compilers and was executed in collaboration with [George Kaffezas](https://github.com/gkffzs). The goal was the implementation of a parser for an imaginary object-oriented language called "Simon", created using [Flex](https://www.gnu.org/software/flex/flex.html) & [Bison](https://www.gnu.org/software/bison/).
 
-| Course name | Technology Used |
-| ----------- | --------------- |
-| Digital Communications | *MATLAB* |
-| Internet Technologies | *HTML, CSS, etc.* |
-| Languages Technology | *Python* |
-| Object Oriented Programming I | *Java* |
-| Object Oriented Programming II | *C++* |
-| Operating Systems I | *C* |
-| Principles of Programming Languages & Compilers | *Flex, Bison* |
-| Scientific Computing | *MATLAB* |
+Assuming you are running a GNU/Linux distribution and that you have those two installed, you can test the parser by typing the following commands in a terminal:
+- `bison -y -d bison_file.y`
+- `flex flex_file.l`
+- `gcc -c y.tab.c lex.yy.c`
+- `gcc y.tab.o lex.yy.o -o parser`
+- `./parser input_file.txt`
+
+Note that the `output_file.txt` includes the output you're expecting, and the `included_file.txt` is the file that, as its name suggests, is included in the beginning of `input_file.txt`.
