@@ -53,7 +53,7 @@ def main():
 
 def vectorize(tagged_file,name):
 
-	# remove stop words,unknown lemmas and puncuation points
+	# remove stop words,unknown lemmas and punctuation points
 	open_lemma_list = remove_stopWords(tagged_file)
 	
 	# metatropi twn lemmas se peza

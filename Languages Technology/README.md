@@ -1,15 +1,6 @@
-This repository contains some of the projects that I have developed, alone or in collaboration with fellow students, in a series of academic courses as an undergraduate student at the [Computer Engineering & Informatics Department](https://www.ceid.upatras.gr/). The majority of comments, references and descriptions are in English. Although the final reports of the projects as well as the actual assignment given by the professors are in Greek.
+#### Languages Technology
 
-Note that the names of the folders are the names of the courses that the projects were included in.
-Also the technologies that were used for each project are:
+This repository contains the project of the course Languages Technology and was executed in collaboration with [Giannis Giannoudakis](https://github.com/giannoudak) and Fotis Hantzis.
 
-| Course name | Technology Used |
-| ----------- | --------------- |
-| Digital Communications | *MATLAB* |
-| Internet Technologies | *HTML, CSS, etc.* |
-| Languages Technology | *Python* |
-| Object Oriented Programming I | *Java* |
-| Object Oriented Programming II | *C++* |
-| Operating Systems I | *C* |
-| Principles of Programming Languages & Compilers | *Flex, Bison* |
-| Scientific Computing | *MATLAB* |
+The goal of the first part of the project was to create an inverted index for 1000 texts taken from Wikipedia. In this index, which is in XML format, we submit a series of queries and we calculate the average search time.
+At first we implemented a tokenization process in every text in which all the elements of the texts were identified also with the help of the TreeTagger. Next we ended up to some ignored lemmas in which we eliminated from the process some elements like punctuation marks. So at that point we had achieved a vectorization of the texts.
