@@ -2,5 +2,4 @@
 
 This repository contains the project of the course Languages Technology and was executed in collaboration with [Giannis Giannoudakis](https://github.com/giannoudak) and Fotis Hantzis.
 
-The goal of the first part of the project was to create an inverted index for 1000 texts taken from Wikipedia. In this index, which is in XML format, we submit a series of queries and we calculate the average search time.
-At first we implemented a tokenization process in every text in which all the elements of the texts were identified also with the help of the TreeTagger. Next we ended up to some ignored lemmas in which we eliminated from the process some elements like punctuation marks. So at that point we had achieved a vectorization of the texts.
+The main goal of the project was to develop an end-to-end text analysis pipeline for text analysis on a dataset containing 1000 articles taken from the Wikipedia. For that purpose, we implemented some basic NLP tasks (cleanup/tokenization, morphosyntactic analysis, PoS tagging, lemmatization) over the text collection, in order to build an inverted index (in a XML format). The index contains all resulted lemmas with their weight - calculated using the TF-IDF metric - for each text, in a way that it can be easily queried.
