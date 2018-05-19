@@ -5,7 +5,7 @@ Also the technologies that were used for each project are:
 
 | Course name | Technology Used |
 | ----------- | --------------- |
-| Languages Technology | *Python* |
+| Language Technology | *Python* |
 | Digital Communications | *MATLAB* |
 | Internet Technologies | *HTML, CSS, etc.* |
 | Object Oriented Programming I | *Java* |
